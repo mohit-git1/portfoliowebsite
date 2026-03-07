@@ -1,0 +1,120 @@
+/* ═══════════════════════════════
+   projects.css — Projects Section
+   ═══════════════════════════════ */
+
+#projects {
+  background: var(--bg2);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.proj-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+.proj-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(240, 163, 84, 0.25);
+}
+
+/* Project thumbnail area */
+.proj-img {
+  height: 180px;
+  background: linear-gradient(135deg, #1a1a22 0%, #0f0f17 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.proj-img-num {
+  position: absolute;
+  top: 16px; right: 20px;
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgba(240, 163, 84, 0.1);
+  line-height: 1;
+}
+
+/* Card body */
+.proj-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.proj-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.proj-desc {
+  font-size: 0.87rem;
+  color: #a09c93;
+  line-height: 1.65;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+/* Tech chips */
+.proj-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.tech-chip {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  letter-spacing: 0.04em;
+}
+
+/* Links row */
+.proj-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.proj-link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s;
+}
+.proj-link:hover { opacity: 0.7; }
+
+.proj-link-ghost {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+.proj-link-ghost:hover { color: var(--text); }

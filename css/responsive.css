@@ -1,0 +1,32 @@
+/* ═══════════════════════════════════════
+   responsive.css — Media Queries
+   ═══════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* Navbar */
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+
+  /* Sections */
+  section { padding: 70px 20px; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-avatar-box { aspect-ratio: 1; max-width: 220px; margin: 0 auto; }
+
+  /* Skills */
+  .skills-row { grid-template-columns: 1fr; }
+  .skills-category {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+  }
+  .skills-items { padding: 12px 20px 16px; }
+
+  /* Contact */
+  .contact-card { padding: 36px 24px; }
+
+  /* Experience */
+  .exp-card { padding: 24px; }
+}
