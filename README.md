@@ -6,7 +6,7 @@
 
 **A clean, fast, fully hand-coded portfolio — no frameworks, no build tools, just pure HTML, CSS & JavaScript.**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Site-2563ff?style=flat-square&logo=vercel&logoColor=white)](https://mohit-sharma.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Site-2563ff?style=flat-square&logo=vercel&logoColor=white)](https://portfoliowebsite-swart-pi.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-mohit--git1-0f1629?style=flat-square&logo=github&logoColor=white)](https://github.com/mohit-git1)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-mohit--sharma-0a66c2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohit-sharma-3742773aa/)
 
@@ -97,13 +97,13 @@ Large serif name with italic blue accent, animated entrance, pulsing "Open to op
 ### 👤 About
 Two-column layout — a card on the left with monogram, availability status, and skill pills, and a personal bio on the right.
 
-### 🛡️ Projects — Sentinel AI
+### 🛡️ Projects
 Two featured projects displayed as dark navy cards against the navy background for contrast:
 
 | # | Project | Stack |
 |---|---------|-------|
-| 01 | **Sentinel AI — Automated PR Code Reviewer** | React · TypeScript · Node.js · Express · PostgreSQL · OpenAI GPT-4o · GitHub API · Webhooks · Monaco Editor |
-| 02 | **Sentinel AI — Smart Stack Overflow Search** | React · TypeScript · Node.js · Express · PostgreSQL · OpenAI Embeddings · Stack Exchange API · Recharts |
+| 01 | **Sentinel AI — Automated PR Code Reviewer** | [Live Demo](https://sentinel-ai-woad-beta.vercel.app/) · React · TypeScript · Node.js · Express · PostgreSQL · GPT-4o |
+| 02 | **StackSense — Smart Stack Overflow Search** | React · TypeScript · Node.js · Express · PostgreSQL · OpenAI Embeddings · Stack Exchange API |
 
 ### ⚡ Skills
 Six white skill boxes in a 3-column grid — Languages, Frontend, Backend, Databases & ORM, Tools & Platforms, AI & APIs.
@@ -171,6 +171,8 @@ Auto-deploys on every push to `main`.
 | | |
 |-|-|
 | 📧 Email | [mohitsharma2826@gmail.com](mailto:mohitsharma2826@gmail.com) |
+| 📞 Phone | [+91 86280 48360](tel:+918628048360) |
+
 | 💼 LinkedIn | [linkedin.com/in/mohit-sharma-3742773aa](https://www.linkedin.com/in/mohit-sharma-3742773aa/) |
 | 🐙 GitHub | [github.com/mohit-git1](https://github.com/mohit-git1) |
 
