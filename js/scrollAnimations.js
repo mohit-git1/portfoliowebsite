@@ -1,24 +1,35 @@
-/* ═══════════════════════════════════════════
-   scrollAnimations.js — IntersectionObserver
-   ═══════════════════════════════════════════ */
+/* ════════════════════════════════════════════════════════════
+   scrollAnimations.js — Intersection Observer
+   ════════════════════════════════════════════════════════════ */
 
-/**
- * Watches all .fade-up elements and adds .visible
- * when they enter the viewport.
- */
 function initScrollAnimations() {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+  const options = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
-  document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  // Initial fade-ups
+  document.querySelectorAll('.fade-up').forEach((el) => {
+    observer.observe(el);
+  });
+
+  // Stagger grid items if they are within a parent that's visible
+  const grids = document.querySelectorAll('.proj-grid, .skills-grid');
+  grids.forEach((grid) => {
+    const children = grid.children;
+    Array.from(children).forEach((child, index) => {
+      child.style.transitionDelay = `${index * 0.1}s`;
+    });
+  });
 }
 
 document.addEventListener('DOMContentLoaded', initScrollAnimations);

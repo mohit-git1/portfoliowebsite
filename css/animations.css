@@ -1,15 +1,16 @@
-/* ═══════════════════════════════════════
-   animations.css — Scroll & Load Animations
-   ═══════════════════════════════════════ */
+/* ════════════════════════════════════════════════════════════
+   animations.css — Meticulous Motion
+   ════════════════════════════════════════════════════════════ */
 
 /* Fade-up on scroll (JS adds .visible) */
 .fade-up {
   opacity: 0;
-  transform: translateY(32px);
-  transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(var(--space-m));
+  transition: 
+    opacity 0.8s var(--ease-out), 
+    transform 0.8s var(--ease-out);
 }
+
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
@@ -19,3 +20,4 @@
 .fade-up:nth-child(2) { transition-delay: 0.1s; }
 .fade-up:nth-child(3) { transition-delay: 0.2s; }
 .fade-up:nth-child(4) { transition-delay: 0.3s; }
+.fade-up:nth-child(5) { transition-delay: 0.4s; }

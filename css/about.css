@@ -1,61 +1,107 @@
-/* ═══════════════════════════════
-   about.css — About Section
-   ═══════════════════════════════ */
+/* ════════════════════════════════════════════════════════════
+   about.css — Editorial Grid for Bio
+   ════════════════════════════════════════════════════════════ */
 
 #about {
-  background: var(--bg2);
+  background: var(--bg-soft);
 }
 
-.about-grid {
+.about-wrap {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-3xl);
   align-items: start;
 }
 
-/* Avatar column */
-.about-avatar-wrap {
+.about-card {
+  background: var(--surface);
+  padding: var(--space-2xl);
+  border-radius: var(--space-m);
+  border: 1px solid var(--border);
   position: relative;
+  text-align: left;
+  box-shadow: 0 10px 40px oklch(0% 0 0% / 5%);
 }
 
-.about-avatar-box {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  background: var(--surface);
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border);
+.about-monogram {
+  width: 80px;
+  height: 80px;
+  background: var(--navy);
+  color: var(--bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  font-family: var(--font-serif);
+  font-size: var(--step-2);
+  font-style: italic;
+  border-radius: 50%;
+  margin-bottom: var(--space-m);
 }
 
-.about-avatar-initials {
+.about-card-name {
   font-family: var(--font-display);
-  font-size: 5rem;
-  font-weight: 900;
+  font-size: var(--step-2);
+  font-weight: 700;
+  margin-bottom: var(--space-3xs);
+}
+
+.about-card-role {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
   color: var(--accent);
-  opacity: 0.4;
+  margin-bottom: var(--space-l);
 }
 
-.about-avatar-deco {
-  position: absolute;
-  top: -16px; right: -16px;
-  width: 120px; height: 120px;
-  border: 2px solid rgba(240, 163, 84, 0.2);
-  border-radius: 12px;
-  z-index: -1;
+.about-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin-bottom: var(--space-l);
 }
 
-/* Text column */
+.pill {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  padding: var(--space-3xs) var(--space-s);
+  border-radius: 100px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+}
+
+.about-divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: var(--space-m);
+}
+
+.about-stat {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+}
+
+.about-stat strong {
+  color: var(--text);
+}
+
+.about-text {
+  max-width: 60ch;
+}
+
 .about-text p {
-  font-size: 1.05rem;
-  color: #c4c0b8;
-  line-height: 1.85;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-m);
 }
+
 .about-text p strong {
   color: var(--text);
   font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .about-wrap {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
 }

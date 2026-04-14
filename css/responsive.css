@@ -1,32 +1,39 @@
-/* ═══════════════════════════════════════
-   responsive.css — Media Queries
-   ═══════════════════════════════════════ */
+/* ════════════════════════════════════════════════════════════
+   responsive.css — Mobile & Tablet Refinements
+   ════════════════════════════════════════════════════════════ */
 
-@media (max-width: 768px) {
-
-  /* Navbar */
-  nav { padding: 16px 20px; }
-  .nav-links { display: none; }
-
-  /* Sections */
-  section { padding: 70px 20px; }
-
-  /* About */
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-avatar-box { aspect-ratio: 1; max-width: 220px; margin: 0 auto; }
-
-  /* Skills */
-  .skills-row { grid-template-columns: 1fr; }
-  .skills-category {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding: 14px 20px;
+@media (max-width: 1024px) {
+  :root {
+    --space-3xl: 5rem;
   }
-  .skills-items { padding: 12px 20px 16px; }
+}
 
-  /* Contact */
-  .contact-card { padding: 36px 24px; }
+@media (max-width: 900px) {
+  section {
+    padding: var(--space-2xl) var(--space-m);
+  }
 
-  /* Experience */
-  .exp-card { padding: 24px; }
+  .heading {
+    font-size: var(--step-4);
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --step-7: 3.5rem;
+    --step-6: 3rem;
+  }
+
+  section {
+    padding: var(--space-xl) var(--space-s);
+  }
+}
+
+/* Touch Target Polish */
+@media (pointer: coarse) {
+  .btn, .nav-links a, .nav-cta, .cl {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
 }

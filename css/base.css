@@ -1,26 +1,6 @@
-/* ═══════════════════════════════════════
-   base.css — Reset, Variables, Typography
-   ═══════════════════════════════════════ */
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;600;700;800&display=swap');
-
-/* ── CSS Variables ── */
-:root {
-  --bg:      #0c0c0e;
-  --bg2:     #111115;
-  --surface: #18181f;
-  --border:  rgba(255, 255, 255, 0.07);
-  --text:    #e8e6df;
-  --muted:   #7a7870;
-  --accent:  #f0a354;
-  --accent2: #e05a2b;
-  --accent3: #8b6cf7;
-  --green:   #4ecb71;
-
-  --font-display: 'Playfair Display', serif;
-  --font-mono:    'DM Mono', monospace;
-  --font-body:    'Syne', sans-serif;
-}
+/* ════════════════════════════════════════════════════════════
+   base.css — Reset, Typography & Shared Utilities
+   ════════════════════════════════════════════════════════════ */
 
 /* ── Reset ── */
 *, *::before, *::after {
@@ -31,19 +11,134 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  letter-spacing: 0.015em;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1;
 }
 
 ::selection {
   background: var(--accent);
-  color: #0c0c0e;
+  color: var(--bg);
+}
+
+/* ── Typography Roles ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text);
+  line-height: 1.05; /* Tighter for display typeset */
+  letter-spacing: var(--tracking-display);
+  font-variation-settings: "opsz" 100;
+}
+
+p {
+  font-family: var(--font-display);
+  font-size: var(--step-0);
+  line-height: 1.7;
+  max-width: 75ch; /* Optimal line length for reading */
+  color: var(--text-soft);
+  font-variation-settings: "opsz" 16;
+}
+
+.serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+/* ── Layout ── */
+section {
+  padding: var(--space-3xl) var(--space-l);
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-l);
+}
+
+/* ── Components ── */
+.label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  color: var(--accent);
+  margin-bottom: var(--space-s);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.heading {
+  font-size: var(--step-5);
+  margin-bottom: var(--space-l);
+  font-variation-settings: "opsz" 100;
+}
+
+.heading em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--accent-dark);
+  font-weight: 400;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-s) var(--space-l);
+  border-radius: 100px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform var(--ease-out), filter var(--ease-out), box-shadow var(--ease-out);
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-deep);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ── Noise Texture Overlay ── */
@@ -54,91 +149,5 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.4;
+  opacity: 0.25;
 }
-
-/* ── Shared Section Styles ── */
-section {
-  padding: 100px 40px;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 16px;
-}
-
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  margin-bottom: 48px;
-}
-
-/* ── Buttons ── */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--accent);
-  color: #0c0c0e;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 12px 28px;
-  border-radius: 6px;
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: none;
-  cursor: pointer;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(240, 163, 84, 0.3);
-}
-
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: var(--text);
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 12px 28px;
-  border-radius: 6px;
-  text-decoration: none;
-  border: 1px solid var(--border);
-  transition: border-color 0.2s, color 0.2s;
-  cursor: pointer;
-}
-.btn-ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-/* ── Tags / Badges ── */
-.about-tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin: 4px;
-  letter-spacing: 0.04em;
-}
-.tag-orange { background: rgba(240,163,84,0.12); color: var(--accent);  border: 1px solid rgba(240,163,84,0.2); }
-.tag-purple { background: rgba(139,108,247,0.12); color: var(--accent3); border: 1px solid rgba(139,108,247,0.2); }
-.tag-green  { background: rgba(78,203,113,0.12);  color: var(--green);   border: 1px solid rgba(78,203,113,0.2); }
