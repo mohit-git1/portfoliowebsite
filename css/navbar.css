@@ -20,8 +20,14 @@ nav {
 
 nav.scrolled {
   padding: var(--space-s) var(--space-xl);
-  background: var(--white);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  background: var(--surface);
+  box-shadow: 0 6px 24px oklch(0% 0 0% / 8%);
+}
+
+.nav-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
 }
 
 .nav-logo {
@@ -82,19 +88,23 @@ nav.scrolled {
 .nav-cta {
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--white);
-  background: var(--navy);
+  color: var(--surface);
+  background: var(--accent-dark);
   padding: 8px 18px;
   border-radius: 100px;
   text-decoration: none;
-  transition: transform 0.3s var(--ease-out), background 0.3s var(--ease-out);
+  border: 1px solid oklch(from var(--accent-dark) l c h / 32%);
+  box-shadow: 0 6px 16px oklch(from var(--accent-dark) l c h / 22%);
+  transition: transform 0.3s var(--ease-out), background 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
 }
 
 .nav-cta:hover {
-  background: var(--navy-soft);
+  background: var(--accent);
+  border-color: oklch(from var(--accent) l c h / 40%);
   transform: translateY(-1px);
 }
 
 @media (max-width: 900px) {
   .nav-links { display: none; }
+  .nav-cta { display: none; }
 }

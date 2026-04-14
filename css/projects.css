@@ -3,16 +3,16 @@
    ════════════════════════════════════════════════════════════ */
 
 #projects {
-  background: var(--navy);
-  color: var(--bg);
+  background: var(--bg);
+  color: var(--text);
 }
 
 #projects .label {
-  color: oklch(from var(--accent) l c h / 70%);
+  color: var(--accent);
 }
 
 #projects .heading {
-  color: var(--bg);
+  color: var(--text);
 }
 
 .proj-grid {
@@ -22,24 +22,20 @@
 }
 
 .proj-card {
-  background: var(--navy-light);
-  border: 1px solid oklch(from var(--bg) l c h / 5%);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--space-m);
   overflow: hidden;
   transition: transform var(--ease-out), border-color var(--ease-out), box-shadow var(--ease-out);
   display: flex;
   flex-direction: column;
-  box-shadow: 
-    0 4px 12px oklch(0% 0 0% / 10%),
-    0 12px 40px oklch(0% 0 0% / 20%);
+  box-shadow: 0 8px 28px oklch(0% 0 0% / 8%);
 }
 
 .proj-card:hover {
   transform: translateY(-8px);
-  border-color: oklch(from var(--accent) l c h / 30%);
-  box-shadow: 
-    0 8px 24px oklch(0% 0 0% / 15%),
-    0 24px 80px oklch(0% 0 0% / 30%);
+  border-color: oklch(from var(--accent) l c h / 28%);
+  box-shadow: 0 14px 38px oklch(0% 0 0% / 14%);
 }
 
 .proj-thumb {
@@ -48,7 +44,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background: oklch(from var(--navy-light) 15% c h); /* Darker top */
+  background: var(--bg-soft);
 }
 
 .proj-thumb-num {
@@ -57,7 +53,7 @@
   right: var(--space-l);
   font-family: var(--font-mono);
   font-size: var(--step-4);
-  color: oklch(from var(--bg) l c h / 5%);
+  color: oklch(from var(--text) l c h / 12%);
   pointer-events: none;
 }
 
@@ -67,7 +63,7 @@
   left: var(--space-l);
   font-family: var(--font-mono);
   font-size: var(--step--2);
-  color: oklch(from var(--bg) l c h / 40%);
+  color: var(--text-muted);
 }
 
 .proj-body {
@@ -82,14 +78,14 @@
   font-size: var(--step-1);
   font-weight: 700;
   margin-bottom: var(--space-s);
-  color: var(--bg);
+  color: var(--text);
 }
 
 .proj-desc {
   font-family: var(--font-display);
   font-size: var(--step--1);
   line-height: 1.7;
-  color: oklch(from var(--bg) l c h / 60%);
+  color: var(--text-soft);
   margin-bottom: var(--space-l);
 }
 
@@ -105,9 +101,9 @@
   font-size: var(--step--2);
   padding: 2px 8px;
   border-radius: 4px;
-  background: oklch(from var(--bg) l c h / 5%);
-  color: oklch(from var(--bg) l c h / 70%);
-  border: 1px solid oklch(from var(--bg) l c h / 10%);
+  background: oklch(from var(--accent) l c h / 8%);
+  color: var(--text-soft);
+  border: 1px solid oklch(from var(--accent) l c h / 16%);
 }
 
 .proj-link {
