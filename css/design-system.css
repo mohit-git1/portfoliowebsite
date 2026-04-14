@@ -30,6 +30,10 @@
   /* Semantic Borders - Even more subtle */
   --border:       oklch(0% 0 0% / 6%);
   --border-deep:  oklch(0% 0 0% / 12%);
+  --white: oklch(100% 0 0);
+  --bg-alpha: color-mix(in oklab, var(--bg) 86%, transparent);
+  --navy-soft: oklch(28% 0.05 var(--hue));
+  --z-fixed: 1000;
 
   /* ── Typography (Fluid Scale) ── */
   --font-display: "Bricolage Grotesque", sans-serif;
@@ -67,6 +71,32 @@
   --tracking-display: -0.015em;
   --tracking-label:   0.12em;
   --tracking-tight:   -0.03em;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg:      oklch(14% 0.02 var(--hue));
+  --bg-soft: oklch(18% 0.02 var(--hue));
+  --surface: oklch(22% 0.02 var(--hue));
+
+  --text:       oklch(95% 0.01 var(--hue));
+  --text-soft:  oklch(84% 0.02 var(--hue));
+  --text-muted: oklch(71% 0.02 var(--hue));
+
+  --accent:      oklch(72% 0.14 var(--hue));
+  --accent-soft: oklch(30% 0.05 var(--hue));
+  --accent-dark: oklch(82% 0.08 var(--hue));
+
+  --secondary:   oklch(78% 0.12 160);
+
+  --navy:       oklch(94% 0.01 var(--hue));
+  --navy-light: oklch(88% 0.02 var(--hue));
+  --navy-soft:  oklch(100% 0 0 / 82%);
+
+  --border:      oklch(100% 0 0 / 12%);
+  --border-deep: oklch(100% 0 0 / 22%);
+  --bg-alpha: color-mix(in oklab, var(--bg) 86%, transparent);
+  color-scheme: dark;
 }
 
 /* ── Typography Roles ── */
